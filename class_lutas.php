@@ -44,7 +44,7 @@
         // Métodos abstratos
 
         public function marcarLuta($lutador1, $lutador2) {
-            if ($lutador1->getCategoria() == $lutador2->getCategoria() && $lutador1 != $lutador2) {
+            if ($lutador1->getCategoria() === $lutador2->getCategoria() && $lutador1 != $lutador2) {
                 $this->setAprovada(true);
                 $this->desafiado = $lutador1;
                 $this->desafiante = $lutador2;
