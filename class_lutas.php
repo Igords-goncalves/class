@@ -62,17 +62,17 @@
 
                 switch ($vencedor) {
                     case 0:
-                        echo "Empatou";
+                        echo "<br> Empatou <br>";
                         $this->desafiado->empatarLuta();
                         $this->desafiante->empatarLuta();
                         break;
                     case 1:
-                        echo "Venceu"; // Desafiado vence
+                        echo "<br> Venceu <br>"; // Desafiado vence
                         $this->desafiado->ganharLuta();
                         $this->desafiante->ganharLuta();
                         break;
                     case 2:
-                        echo "Perdeu"; // Desafiante vence 
+                        echo "<br> Perdeu <br>"; // Desafiante vence 
                         $this->desafiado->perderLuta();
                         $this->desafiante->perderLuta();
                         break;
