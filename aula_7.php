@@ -88,6 +88,11 @@
             4,
         );
 
+        $UEC01 = new Lutas;
+        $UEC01->marcarLuta($lutador[0], $lutador[1]);
+
+        print_r($UEC01);
+
     ?>
     </pre>
 </body>

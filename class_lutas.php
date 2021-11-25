@@ -1,8 +1,7 @@
 <?php
-    require_once "interface_lutar.php";
     require_once "class_lutador.php";
 
-    class Lutas implements Lutar { 
+    class Lutas{ 
 
         // Aqui precisa acontecer a agregação entre as classes
         private $desafiado;
@@ -44,8 +43,8 @@
 
         // Métodos abstratos
 
-        public function marcarLuta($lutador1 = null, $lutador2 = null) {
-            if (($lutador1->getCategoria() == $lutador2->getCategoria()) && ($lutador1 != $lutador2)) {
+        public function marcarLuta($lutador1, $lutador2) {
+            if ($lutador1->getCategoria() == $lutador2->getCategoria() && $lutador1 != $lutador2) {
                 $this->setAprovada(true);
                 $this->desafiado = $lutador1;
                 $this->desafiante = $lutador2;
