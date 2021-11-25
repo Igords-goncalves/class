@@ -1,5 +1,6 @@
 <?php
     require_once "interface_lutar.php";
+    require_once "class_lutador.php";
 
     class Lutas implements Lutar { 
 
@@ -43,8 +44,8 @@
 
         // Métodos abstratos
 
-        public function marcarLuta($lutador1, $lutador2) {
-            if ($lutador1->getCategoria() == $lutador2->getCategoria() && $lutador1 != $lutador2) {
+        public function marcarLuta($lutador1 = null, $lutador2 = null) {
+            if (($lutador1->getCategoria() == $lutador2->getCategoria()) && ($lutador1 != $lutador2)) {
                 $this->setAprovada(true);
                 $this->desafiado = $lutador1;
                 $this->desafiante = $lutador2;
@@ -55,23 +56,26 @@
             }
         }
         public function lutar() { // A vitoria, derrota ou empate devem ficar gravados no cartel Lutador
-            if ($this->getAprovada() == true) {
-                $this->getDesafiado(apresentarLutador()); // Callback ?
-                $this->getDesafiante(apresentarLutador());
+            if (!!$this->aprovada) {
+                $this->desafiado->apresentarLutador(); // Callback ?
+                $this->desafiante->apresentarLutador();
                 $vencedor = rand(0, 2);
 
                 switch ($vencedor) {
                     case 0:
                         echo "Empatou";
-                        $this->getDesafiado(empatarLuta());
+                        $this->desafiado->empatarLuta();
+                        $this->desafiante->empatarLuta();
                         break;
                     case 1:
-                        echo "Venceu";
-                        $this->getDesafiado(ganharLuta());
+                        echo "Venceu"; // Desafiado vence
+                        $this->desafiado->ganharLuta();
+                        $this->desafiante->ganharLuta();
                         break;
                     case 2:
-                        echo "Perdeu";
-                        $this->getDesafiado(perderLuta());
+                        echo "Perdeu"; // Desafiante vence 
+                        $this->desafiado->perderLuta();
+                        $this->desafiante->perderLuta();
                         break;
                     
                     default:

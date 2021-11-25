@@ -88,29 +88,6 @@
             4,
         );
 
-        print_r($lutador[0]);
-        $lutador[0]->apresentarLutador();
-        $lutador[0]->mostrarStatus();
-
-        print_r($lutador[1]);
-        $lutador[1]->apresentarLutador();
-        $lutador[1]->mostrarStatus();
-
-        print_r($lutador[2]);
-        $lutador[2]->apresentarLutador();
-        $lutador[2]->mostrarStatus();
-
-        print_r($lutador[3]);
-        $lutador[3]->apresentarLutador();
-        $lutador[3]->mostrarStatus();
-
-        print_r($lutador[4]);
-        $lutador[4]->apresentarLutador();
-        $lutador[4]->mostrarStatus();
-
-        print_r($lutador[5]);
-        $lutador[5]->apresentarLutador();
-        $lutador[5]->mostrarStatus();
     ?>
     </pre>
 </body>
