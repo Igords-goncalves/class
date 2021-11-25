@@ -71,10 +71,10 @@
             $this->setCategoria();
         }
  
-        private function getCategoria() {
+        public function getCategoria() {
             return $this->categoria;
         }
-        private function setCategoria() {
+        public function setCategoria() {
             if ($this->peso < 52.2) {
                 $this->categoria = null;
             } elseif ($this->peso<= 70.3) {
